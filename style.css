@@ -1,0 +1,37 @@
+.gif-container {
+    display: none; /* Initially hidden */
+    width: 100px;  /* Adjust size */
+    height: 100px; /* Adjust size */
+    margin-top: 0px;
+    mix-blend-mode: multiply; /* Blend with the background */
+}
+
+.card.open .gif-container {
+    display: block; /* Show when the card is opened */
+}
+
+.gif-container iframe {
+    width: 100px !important;
+    height: 80!important;
+    mix-blend-mode: multiply; /* Ensure blending applies to GIF */
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) scale(1.8);
+        opacity: 0;
+    }
+}
+
+.heart-float {
+    position: absolute;
+    color: red;
+    font-size: 30px; /* Default size, randomized in JS */
+    animation: floatUp 4s ease-out forwards;
+    pointer-events: none;
+    user-select: none;
+}
+
